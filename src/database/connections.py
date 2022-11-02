@@ -28,3 +28,5 @@ def execute_query(query, params=None):
         return cursor
     except OSError as err:
         print(f"The error '{e}' occurred or the hero name is already taken")
+
+create_connection("postgres", "postgres", "postgres")
