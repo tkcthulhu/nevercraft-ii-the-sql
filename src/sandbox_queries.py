@@ -8,7 +8,21 @@ def testing_function():
                     """)
     return 'successful'
 
-def testing_print_heroes():
+def testing_print_heroes_info():
+
+    print('What would you like to know about our heroes? names, about them, biographies')
+
+    i = input().lower()
+
+    if i == 'name':
+        i = 1
+    elif i == 'about me':
+        i = 2
+    elif i == 'biography':
+        i == 3
+    else:
+        print('INVALID')
+        return
 
     query = """
         SELECT * FROM heroes
@@ -17,6 +31,7 @@ def testing_print_heroes():
     list_of_heroes = execute_query(query).fetchall()
     
     for record in list_of_heroes:
-        pp(record)
+        pp(record[int(i)])
 
-testing_print_heroes()
+testing_print_heroes_info()
+
